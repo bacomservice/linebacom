@@ -50,15 +50,19 @@ if (!empty($bot->isEvents)) {
 			  return $fp!=false;
 			}
 
-			if ($bot->text == "signup") {
+			if ($bot->text == "Signup") {
 				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
-					"Your ID : ".$bot->userId					
+					"Your ID : "
+					."\n".$bot->userId
+					."\n"."Link to signup : "		
 				);
 			} else {
 				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
-					"Signup Now!"
+					"Hi Welcome to Service Bacom Internetwork"
+					."\n"."System can action only command below"
+					."\n"."Signup"
 				);
 			}
 			
