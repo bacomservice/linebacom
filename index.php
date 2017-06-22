@@ -60,9 +60,10 @@ if (!empty($bot->isEvents)) {
 			} else {
 				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
-					"Hi Welcome to Service Bacom Internetwork"
-					."\n"."System can action only command below"
-					."\n"."Signup"
+					"Hi"
+					."\n"."Welcome to Bacom Internetwork"
+					."\n"."List of action below"
+					."\n".": Signup"
 				);
 			}
 			
