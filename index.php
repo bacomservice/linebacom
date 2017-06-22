@@ -49,26 +49,39 @@ if (!empty($bot->isEvents)) {
 			  $fp = fSockOpen($host, $port, $errno, $errstr, $timeout); 
 			  return $fp!=false;
 			}
-		
-	        $linkState = availableUrl($bot->text);
-	        
-	        if ($linkState == true) {
 
-	        	$bot->replyMessageNew	($bot->replyToken, 
-					"Your ID : ".$bot->userId
-					."\n"."Link UP"
-					."\n"."Your Link : ".$bot->text					
-					."\n"."Link IP : ".gethostbyname($bot->text)
-				);					
-			} else {
-
+			if ($bot->text == "signup") {
+				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
-					"Your ID : ".$bot->userId
-					."\n"."Link DOWN"
-					."\n"."Your Link : ".$bot->text					
-					."\n"."Link IP : ".gethostbyname($bot->text)
-				);				
+					"Your ID : ".$bot->userId					
+				);
+			} else {
+				# code...
+				$bot->replyMessageNew	($bot->replyToken, 
+					"Signup Now!"
+				);
 			}
+			
+		
+	  //       $linkState = availableUrl($bot->text);
+	        
+	  //       if ($linkState == true) {
+
+	  //       	$bot->replyMessageNew	($bot->replyToken, 
+			// 		"Your ID : ".$bot->userId
+			// 		."\n"."Link UP"
+			// 		."\n"."Your Link : ".$bot->text					
+			// 		."\n"."Link IP : ".gethostbyname($bot->text)
+			// 	);					
+			// } else {
+
+			// 	$bot->replyMessageNew	($bot->replyToken, 
+			// 		"Your ID : ".$bot->userId
+			// 		."\n"."Link DOWN"
+			// 		."\n"."Your Link : ".$bot->text					
+			// 		."\n"."Link IP : ".gethostbyname($bot->text)
+			// 	);				
+			// }
 		
 	}	
 
