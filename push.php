@@ -2,11 +2,11 @@
 
 include ('bot.php');
 
-$channelSecret = '41a0536c6ac1d4202c8a7c867728c933';
-$access_token  = 'lGIPn6XGSZmb1qYpU/kTWGADC/7keEWP0kI9ybaQjtRyaeyflX5b1QEIwcz3itdl4WtWCtB3cB4zG0RRpU+SXzF4j6XEy4V7sliVfu5pfJd8LyPhGuqNkN2KFHjLElwc6ReLkJOIP5v7/msSD0KUxQdB04t89/1O/w1cDnyilFU=';
+$channelSecret = 'd14174dc7931918c4f6c2a7504ecc4e4';
+$access_token  = 'nLj7f1f8jId5ySXJsSIPCCukWAvCmC5NWp0OkkwU/Fe7GItfHoqg0K1xJ0NMaRbg5Tt0DLX98SnF68t14MDA4f/NINhO11h6WFm23QHd9bxr0cUC6NKxTIi3GhOcCUBNthtmtF/S3PUsH6bV0jByLQdB04t89/1O/w1cDnyilFU=';
 $bot = new BOT_API($channelSecret, $access_token);
 $bot->sendMessageNew(
-	'Ccc6c182dace6aeda58b1b7dc24276da7', 
+	'Ua19821cd93141008d26221f16381d256', 
 	'Hello World !!');
 if ($bot->isSuccess()) {
     echo 'Succeeded!';
