@@ -53,7 +53,7 @@ if (!empty($bot->isEvents)) {
 			if ($bot->text == "Signup") {
 				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
-					"Your ID : "
+					"Your Token : "
 					."\n".$bot->userId
 					."\n"."Link to signup : "		
 				);
