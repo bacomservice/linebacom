@@ -55,15 +55,15 @@ if (!empty($bot->isEvents)) {
 				$bot->replyMessageNew	($bot->replyToken, 
 					"Your Token : "
 					."\n".$bot->userId
-					."\n"."Link to signup : "		
+					."\n"."Local Link to signup : 192.168.1.182"		
 				);
 			} else {
 				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
 					"Hi"
 					."\n"."Welcome to Bacom Internetwork"
-					."\n"."List of action below"
-					."\n".": Signup"
+					."\n"."System can action only command below"
+					."\n"."1 : Signup"
 				);
 			}
 			
