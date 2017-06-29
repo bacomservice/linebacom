@@ -55,11 +55,8 @@ if (!empty($bot->isEvents)) {
 				$bot->replyMessageNew	($bot->replyToken, 
 					"Your Token : "
 					."\n".$bot->userId
-					."\n"."Local Link to signup : https://bacom.dyndns.org:4433"		
-				);
-				$bot->replyMessageNew	($bot->replyToken, 
-					"Local Link to signup : https://bacom.dyndns.org:4433"		
-				);
+					,"Local Link to signup : https://bacom.dyndns.org:4433"		
+				);				
 			} else {
 				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
