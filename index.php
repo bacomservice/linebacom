@@ -61,7 +61,7 @@ if (!empty($bot->isEvents)) {
 			} else if ($bot->text == "test") {
 				# code...
 				$bot->replyMessageNew	($bot->replyToken, 
-					[
+					"[
 				        {
 				            "type":"text",
 				            "text":"Hello, user"
@@ -70,7 +70,7 @@ if (!empty($bot->isEvents)) {
 				            "type":"text",
 				            "text":"May I help you?"
 				        }
-				    ]		
+				    ]"		
 				);
 
 			} else {
