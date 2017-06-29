@@ -55,7 +55,7 @@ if (!empty($bot->isEvents)) {
 				$bot->replyMessageNew	($bot->replyToken, 
 					"Your Token : "
 					."\n".$bot->userId
-					."\n"."Local Link to signup : https://bacom.dyndns.org:4433"		
+					."\n"."Link to signup : https://bacom.dyndns.org:4433"		
 				);
 
 			} else if ($bot->text == "test") {
@@ -80,6 +80,7 @@ if (!empty($bot->isEvents)) {
 					."\n"."Welcome to Bacom Internetwork"
 					."\n"."System can action only command below"
 					."\n"."1 : Signup"
+					."\n"."Link to signup : https://bacom.dyndns.org:4433"
 				);
 			}
 			
