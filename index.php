@@ -52,20 +52,26 @@ if (!empty($bot->isEvents)) {
 
 			if ($bot->text == "Signup") {
 				# code...
-				// $bot->replyMessageNew	($bot->replyToken, 
-				// 	"Your Token : "
-				// 	."\n".$bot->userId
-				// 	."\n"."Local Link to signup : https://bacom.dyndns.org:4433"		
-				// );
-				$bot->replyMessageNew	($bot->replyToken,"[
-			        {
-			            "type":"text",
-			            "text":"Hello, user"
-			        },
-			        {
-			            "type":"text",
-			            "text":"May I help you?"
-			        }"
+				$bot->replyMessageNew	($bot->replyToken, 
+					"Your Token : "
+					."\n".$bot->userId
+					."\n"."Local Link to signup : https://bacom.dyndns.org:4433"		
+				);
+
+			} else if ($bot->text == "test") {
+				# code...
+				$bot->replyMessageNew	($bot->replyToken, 
+					[
+				        {
+				            "type":"text",
+				            "text":"Hello, user"
+				        },
+				        {
+				            "type":"text",
+				            "text":"May I help you?"
+				        }
+				    ]		
+				);
 
 			} else {
 				# code...
