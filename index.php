@@ -40,72 +40,132 @@ $bot->verify(access_token);
 	
 if (!empty($bot->isEvents)) {
 
-	if ($bot->text == "getEvent") {
-		# code...
-		$bot->replyMessageNew($bot->replyToken, json_encode($bot->events));
-	} else {
-		# code...
-			function availableUrl($host, $port=80, $timeout=10) {
-			  $fp = fSockOpen($host, $port, $errno, $errstr, $timeout); 
-			  return $fp!=false;
-			}
+	switch ($bot->eventType) {
+    case "text":
+    	if ( strtolower($bot->text) == "getevent") {
+    		# code...
+    		$bot->replyMessageNew( $bot->replyToken, json_encode($bot->events));
+    	} else if ( strtolower($bot->text) == "signup") {
+    		# code...
+    		if ( strtolower($bot->userType) == "group") {
+    			# code...
+    			$bot->replyMessageNew( $bot->replyToken, "Go to your private box!");
+    			$bot->sendMessageNew( $bot->userId, "Group TokenID : ");
+    			$bot->sendMessageNew( $bot->userId, $bot->groupId);
+    			$bot->sendMessageNew( $bot->userId, "Link to signup : https://bacom.dyndns.org:4433");
+    		} else {
+    			# code...
+    			$bot->replyMessageNew( $bot->replyToken, "Your TokenID : ");
+    			$bot->sendMessageNew( $bot->userId, $bot->userId);
+    			$bot->sendMessageNew( $bot->userId, "Link to signup : https://bacom.dyndns.org:4433");
+    		}
+    		
+    	} else if ( strtolower($bot->text) == "help"  || $bot->text == "?" ) {
+    		# code...
+    		if (strtolower($bot->userType) == "group") {
+    			# code...
+    			$bot->replyMessageNew( $bot->replyToken, 
+    			"Hi"
+    			."\n"."Welcome to Bacom Internetwork");
+	    		$bot->sendMessageNew( $bot->groupId, "System can action only command below");
+	    		$bot->sendMessageNew( $bot->groupId, "1 : Signup");
+	    		$bot->sendMessageNew( $bot->groupId, "Link to signup : https://bacom.dyndns.org:4433");
+    		} else {
+    			# code...
+    			$bot->replyMessageNew( $bot->replyToken, 
+    			"Hi"
+    			."\n"."Welcome to Bacom Internetwork");
+	    		$bot->sendMessageNew( $bot->userId, "System can action only command below");
+	    		$bot->sendMessageNew( $bot->userId, "1 : Signup");
+	    		$bot->sendMessageNew( $bot->userId, "Link to signup : https://bacom.dyndns.org:4433");
+    		}    		
+    		
+    	} else {
+    		# code...
+    	}
+    	
+        
+        break;
+    case "sticker":
+        $bot->replyMessageNew( $bot->replyToken, $bot->message);
+        break;
+    case "image":
+        // $bot->replyMessageNew( $bot->replyToken, json_encode($bot->events));
+        break;
+    case "video":
+        // $bot->replyMessageNew( $bot->replyToken, json_encode($bot->events));
+        break;
+    
+    default:
+        
+	}
 
-			if ($bot->text == "Signup") {
-				# code...
-				$bot->replyMessageNew	($bot->replyToken, 
-					"Your Token : "
-					."\n".$bot->userId
-					."\n"."Link to signup : https://bacom.dyndns.org:4433"		
-				);
+	// if ($bot->text == "getEvent") {
+	// 	# code...
+	// 	$bot->replyMessageNew($bot->replyToken, json_encode($bot->events));
+	// } else {
+	// 	# code...
+	// 		function availableUrl($host, $port=80, $timeout=10) {
+	// 		  $fp = fSockOpen($host, $port, $errno, $errstr, $timeout); 
+	// 		  return $fp!=false;
+	// 		}
 
-			} else if ($bot->text == "test") {
-				# code...
-				$bot->replyMessageNew	($bot->replyToken, 
-					'[
-				        {
-				            "type":"text",
-				            "text":"Hello, user"
-				        },
-				        {
-				            "type":"text",
-				            "text":"May I help you?"
-				        }
-				    ]'		
-				);
+	// 		if ($bot->text == "Signup") {
+	// 			# code...
+	// 			$bot->replyMessageNew	($bot->replyToken, 
+	// 				"Your Token : "
+	// 				."\n".$bot->userId
+	// 				."\n"."Link to signup : https://bacom.dyndns.org:4433"		
+	// 			);
 
-			} else {
-				# code...
-				$bot->replyMessageNew	($bot->replyToken, 
-					"Hi"
-					."\n"."Welcome to Bacom Internetwork"
-					."\n"."System can action only command below"
-					."\n"."1 : Signup"
-					."\n"."Link to signup : https://bacom.dyndns.org:4433"
-				);
-			}
+	// 		} else if ($bot->text == "test") {
+	// 			# code...
+	// 			$bot->replyMessageNew	($bot->replyToken, 
+	// 				'[
+	// 			        {
+	// 			            "type":"text",
+	// 			            "text":"Hello, user"
+	// 			        },
+	// 			        {
+	// 			            "type":"text",
+	// 			            "text":"May I help you?"
+	// 			        }
+	// 			    ]'		
+	// 			);
+
+	// 		} else {
+	// 			# code...
+	// 			$bot->replyMessageNew	($bot->replyToken, 
+	// 				"Hi"
+	// 				."\n"."Welcome to Bacom Internetwork"
+	// 				."\n"."System can action only command below"
+	// 				."\n"."1 : Signup"
+	// 				."\n"."Link to signup : https://bacom.dyndns.org:4433"
+	// 			);
+	// 		}
 			
 		
-	  //       $linkState = availableUrl($bot->text);
+	//   //       $linkState = availableUrl($bot->text);
 	        
-	  //       if ($linkState == true) {
+	//   //       if ($linkState == true) {
 
-	  //       	$bot->replyMessageNew	($bot->replyToken, 
-			// 		"Your ID : ".$bot->userId
-			// 		."\n"."Link UP"
-			// 		."\n"."Your Link : ".$bot->text					
-			// 		."\n"."Link IP : ".gethostbyname($bot->text)
-			// 	);					
-			// } else {
+	//   //       	$bot->replyMessageNew	($bot->replyToken, 
+	// 		// 		"Your ID : ".$bot->userId
+	// 		// 		."\n"."Link UP"
+	// 		// 		."\n"."Your Link : ".$bot->text					
+	// 		// 		."\n"."Link IP : ".gethostbyname($bot->text)
+	// 		// 	);					
+	// 		// } else {
 
-			// 	$bot->replyMessageNew	($bot->replyToken, 
-			// 		"Your ID : ".$bot->userId
-			// 		."\n"."Link DOWN"
-			// 		."\n"."Your Link : ".$bot->text					
-			// 		."\n"."Link IP : ".gethostbyname($bot->text)
-			// 	);				
-			// }
+	// 		// 	$bot->replyMessageNew	($bot->replyToken, 
+	// 		// 		"Your ID : ".$bot->userId
+	// 		// 		."\n"."Link DOWN"
+	// 		// 		."\n"."Your Link : ".$bot->text					
+	// 		// 		."\n"."Link IP : ".gethostbyname($bot->text)
+	// 		// 	);				
+	// 		// }
 		
-	}	
+	// }	
 
 	
 
