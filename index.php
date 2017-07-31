@@ -1,8 +1,8 @@
 <?php
 include ('bot.php');
 
-$channelSecret = 'd14174dc7931918c4f6c2a7504ecc4e4';
-$access_token  = 'nLj7f1f8jId5ySXJsSIPCCukWAvCmC5NWp0OkkwU/Fe7GItfHoqg0K1xJ0NMaRbg5Tt0DLX98SnF68t14MDA4f/NINhO11h6WFm23QHd9bxr0cUC6NKxTIi3GhOcCUBNthtmtF/S3PUsH6bV0jByLQdB04t89/1O/w1cDnyilFU=';
+$channelSecret = '1378f78b9a3dc72382c44f5010c33918';
+$access_token  = 'lCZp0Y2/D7QtTXF99J8e7id7b11ORelZpN60vD9r3Q4jln/2VnGJ25+X6Lbbs8IR41noj7LKKkXGqjybmMi92QlH7A0QVgL3Wk/clVCgvKuiezxBSWzDzgVzyvajzM5HBwEs4kfL6FHuHjhqylThfAdB04t89/1O/w1cDnyilFU=';
 
 #$url = 'https://api.line.me/v1/oauth/verify';
 #$headers = array('Authorization: Bearer ' . $access_token);
